@@ -160,7 +160,14 @@ mysql_query("set names 'utf8'");
 						      			echo '<div class="single_iteam">';
 										if($row[8]=="" || $row[8]==".jpg")
 										{
-											echo '<img src="img/devhill/550x330x3.jpg" alt="img">';
+											if($row/2==0)
+											{
+												echo '<img src="img/devhill/550x330x3.jpg" alt="img">';
+											}
+											else
+											{
+												echo '<img src="img/devhill/550x330x4.jpg" alt="img">';
+											}
 										}
 										else
 										{
