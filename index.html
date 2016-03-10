@@ -158,7 +158,14 @@ mysql_query("set names 'utf8'");
 						    		while ($row=mysql_fetch_row($result))
 						    		{
 						      			echo '<div class="single_iteam">';
-						        		echo '<img src='.$row[8].' width="550px" height="425px" alt="img">';
+										if($row[8]=="" || $row[8]==".jpg")
+										{
+											echo '<img src="img/devhill/550x330x3.jpg" alt="img">';
+										}
+										else
+										{
+											echo '<img src='.$row[8].' width="550px" height="425px" alt="img">';
+										}
 										echo '<h2>';
 										echo '<a class="slider_tittle" href="'.$row[4].'" target="_blank">';
 										echo $row[1];
