@@ -150,7 +150,7 @@ mysql_query("set names 'utf8'");
 							<div class="slick_slider">
 
 								<?php
-		    						$strsql="SELECT distinct * FROM rsscontent WHERE FeedID=".$tuguafeedid." ORDER BY Title DESC LIMIT 4";
+		    						$strsql="SELECT distinct * FROM rsscontent WHERE FeedID=".$tuguafeedid." ORDER BY Title DESC LIMIT 9";
     								$result=mysql_db_query($mysql_database, $strsql, $conn);
     								$row=mysql_fetch_row($result);
 
@@ -160,7 +160,7 @@ mysql_query("set names 'utf8'");
 						      			echo '<div class="single_iteam">';
 						        		echo '<img src='.$row[8].' alt="img">';
 										echo '<h2>';
-										echo '<a class="slider_tittle" href="'.$row[4].'">';
+										echo '<a class="slider_tittle" href="'.$row[4].'" target="_blank">';
 										echo $row[1];
 										echo '</a>';
 										echo '</h2>';
