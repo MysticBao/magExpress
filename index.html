@@ -150,7 +150,7 @@ mysql_query("set names 'utf8'");
 							<div class="slick_slider">
 
 								<?php
-		    						$strsql="SELECT distinct * FROM rsscontent WHERE FeedID=".$tuguafeedid." ORDER BY Title DESC LIMIT 9";
+		    						$strsql="SELECT distinct * FROM rsscontent WHERE FeedID=".$zhihufeedid." ORDER BY Title DESC LIMIT 9";
     								$result=mysql_db_query($mysql_database, $strsql, $conn);
     								$row=mysql_fetch_row($result);
 
