@@ -162,7 +162,7 @@ mysql_query("set names 'utf8'");
 						      			echo '<div class="single_iteam">';
 										if($row[8]=="" || $row[8]==".jpg")
 										{
-											if($crow/2==0)
+											if($crow++/2==0)
 											{
 												echo '<img src="img/devhill/550x330x3.jpg" alt="img">';
 											}
@@ -181,7 +181,6 @@ mysql_query("set names 'utf8'");
 										echo '</a>';
 										echo '</h2>';
 										echo '</div>';
-										$crow = $crow + 1;
 						    		}  
 								?>
 
