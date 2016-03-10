@@ -168,35 +168,6 @@ mysql_query("set names 'utf8'");
 						    		}  
 								?>
 
-
-								<!-- div class="single_iteam">
-									<img src="img/devhill/550x330x1.jpg" alt="img">
-									<h2>
-										<a class="slider_tittle" href="single.html">11111212121Fusce
-											eu nulla semper porttitor felis sit amet</a>
-									</h2>
-								</div>
-								<div class="single_iteam">
-									<img src="img/devhill/550x330x2.jpg" alt="img">
-									<h2>
-										<a class="slider_tittle" href="single.html">233232323232Fusce
-											eu nulla semper porttitor felis sit amet</a>
-									</h2>
-								</div>
-								<div class="single_iteam">
-									<img src="img/devhill/550x330x3.jpg" alt="img">
-									<h2>
-										<a class="slider_tittle" href="single.html">d232323232Fusce
-											eu nulla semper porttitor felis sit amet</a>
-									</h2>
-								</div>
-								<div class="single_iteam">
-									<img src="img/devhill/550x330x4.jpg" alt="img">
-									<h2>
-										<a class="slider_tittle" href="single.html">55555Fusce eu
-											nulla semper porttitor felis sit amet</a>
-									</h2>
-								</div> -->
 							</div>
 						</div>
 					</div>
@@ -205,7 +176,27 @@ mysql_query("set names 'utf8'");
 					<div class="col-lg-6 col-md-6 col-sm6">
 						<div class="content_top_right">
 							<ul class="featured_nav wow fadeInDown">
-								<li><img src="img/devhill/300x215x1.jpg" alt="img">
+							
+							<?php
+		    						$strsql="SELECT distinct * FROM rsscontent ORDER BY Title DESC LIMIT 4";
+    								$result=mysql_db_query($mysql_database, $strsql, $conn);
+    								$row=mysql_fetch_row($result);
+
+    								mysql_data_seek($result, 0);
+						    		while ($row=mysql_fetch_row($result))
+						    		{
+						      			echo '<li>';
+						        		echo '<img src='.$row[8].' width="300px" height="215px" alt="img">';
+										echo '<div class="title_caption">';
+										echo '<a href="'.$row[4].'" target="_blank">';
+										echo $row[1];
+										echo '</a>';
+										echo '</div>';
+										echo '</li>';
+						    		}  
+								?>
+							
+								<!-- li><img src="img/devhill/300x215x1.jpg" alt="img">
 									<div class="title_caption">
 										<a href="single.html"> 5211111111Sed luctus semper odio
 											aliquam rhoncus </a>
@@ -224,7 +215,7 @@ mysql_query("set names 'utf8'");
 									<div class="title_caption">
 										<a href="single.html"> Sed luctus semper odio aliquam
 											rhoncus </a>
-									</div></li>
+									</div></li> -->
 							</ul>
 						</div>
 					</div>
